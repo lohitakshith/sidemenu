@@ -7,7 +7,13 @@ menuBtn.addEventListener("click", () => {
     menu.style.left = "0"
 })
 menu.addEventListener("click", (event) => {
-    menu.style.left = "-99%"
+    // console.log(menu.style.left)
+    if (menu.style.left === "0px") {
+        menu.style.left = "-99%"
+    } else {
+        menu.style.left = "0"
+    }
+
 })
 content.addEventListener("click", (event) => {
     event.stopPropagation()
@@ -21,11 +27,11 @@ menuRow.addEventListener("click", (event) => {
 // by default, it only adds horizontal recognizers
 var mc = new Hammer(menu);
 mc.on("swiperight", function (ev) {
-    console.log(ev)
+    // console.log(ev)
     menu.style.left = "0"
 });
 var mc = new Hammer(menu);
 mc.on("swipeleft", function (ev) {
-    console.log(ev)
+    // console.log(ev)
     menu.style.left = "-99%"
 });
